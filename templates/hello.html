@@ -11,17 +11,25 @@
       height: 360px;
       width: 100%;
       object-fit: cover;
+      margin-bottom:16px;
     }
   </style>
 </head>
 <body>
+  {% include 'nav.html' %}
+  <img class="img-fluid" id="banner" src='https://reoak-career-websites.tharung3.repl.co/static/career.jpg' >
   <div class="container">
     <h1 class="text-center mt-2 mb-4">Reoak Careers</h1>
-  <img class="img-fluid" id="banner" src='https://reoak-career-websites.tharung3.repl.co/static/career.jpg' >
-  <h2 class="text-center mt-2 mb-4">About Reoak</h2>
-  <p>
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-  </p>
+  <div class='row' style='margin-bottom:16px'>
+    <div class='col-md-6'>
+      <p class='lead'>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    </div>
+    <div class='d-none d-md-block col-md-6'>
+        <img class="img-fluid" id="banner" style='height:300px; border-radius:5px' src='/static/working.jpg'>
+    </div>
+  </div>
   <h2 class="text-center mt-2 mb-4">Job Openings</h2>
   <div>
     {% for job in jobs %}
@@ -29,8 +37,9 @@
     {% endfor %}
   </div>
   <div class="text-center">
-    <button class="btn btn-primary btn-lg">Contact us</button>
+    <a class="btn btn-primary btn-lg" href="mailto:tharungtharun590@gmail.com?subject=Ask%20any%20question&body=My%20Name%3A%20%3Cname%3E%0D%0A%0D%0AMy%20Question%3A%20%3Cquestion%3E">Contact us</a>
   </div>
   </div>
+  {% include 'footer.html' %}
 </body>
 </html>
