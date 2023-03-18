@@ -32,4 +32,4 @@ def load_job_from_db_with_id(id):
 
 def add_application_to_db(job_id, data):
   with engine.connect() as conn:
-    
+    pass
