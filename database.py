@@ -8,6 +8,7 @@ engine = create_engine(db_connection_string,
                          "ssl_ca": "/etc/ssl/cert.pem"
                        }})
 
+
 def load_jobs_from_db():
   with engine.connect() as conn:
     result = conn.execute(text("select * from jobs"))
@@ -15,3 +16,15 @@ def load_jobs_from_db():
     for row in result.all():
       jobs.append(row._asdict())
     return jobs
+
+
+def load_job_from_db_with_id(id):
+  with engine.connect() as conn:
+    result = conn.execute(text("select * from jobs where id= :val"),
+                          {'val': id})
+    job_row = result.all()
+
+    if len(job_row) == 0:
+      return None
+    else:
+      return job_row[0]._asdict()
